@@ -1,0 +1,72 @@
+Provided by a student:
+
+NOTES: 03/09/14
+
+RENDER THINGS IN REAL TIME
+__________________________
+Vocab
+ALBEDO = is diffuse. it excites the outsides of the molecule and causes lights to be reemitted at a differnet wavelength.
+ 
+
+___________________________
+Observations
+Filters in unity bob: blurred radial....its actual a fragment shader ran after another then put on the screen buffer
+smoke around bob: partical effect.. havent talked about these yet
+3d is caused by parralax: the one that is closer(to the screen) is faster if panner or rotating. At a certain distance
+			  this does not come into play, so this is where skyboxes come in.
+____________________________
+Sections
+
+"SHADOWS"
+	Just a lack of light. 
+	Always grey because of an ambient portion.
+
+	Ray tracing: 	Physical Model - expensive. makes million of triangles trace back to the lightsource to make sure
+                                         it is under an object blocking the light 
+			Shadow Volumes - (slow,accurate, hard to compute)
+			Use lights as shadows(shadow maps) - prerender pass, render it from the lights point of view. what we get is 
+						we will be able to see that there is an object and behind it is a plane.
+					        from there you extract the z buffer. z buffer stores the distance from 
+						the camera to the object. this is stored in greyscale values. Pass two
+						using z buffer and distance, if it is >= to collision distance, to the sun
+						it is lit, otherwise it is not lit. 
+
+	PROBLEMS: you are stuck with whatever the z buffer gives you. there is an issue with the z buffer resolution - 
+		  smaller is faster bigger is slower. Jagged shadows are telltale signs of a shadow map. This is why you
+                  blur out those jagged edges
+
+
+"BAKING"
+		??
+
+
+
+"SKYBOX" - sky, duh
+		Holds the sky. Holds 6 textures, and we always render this first. This special shader that it contains
+		the ability for camera rotation. It is often small. Anything that is infinitly far away fill be totally black,
+		there are in unity,
+
+		
+		clear flags in unity: color means color will be black. skybox is always first, and always selected for the clear flag.
+		Box versus sphere: 
+			sphere: pro - ??
+				con - ??
+			box:	pro - ??
+				con - ??
+
+
+"BILLBOARD TEXTURE"
+		texture that always faces the camera!
+		used for special effects in games. used for "level up" text in games.
+
+"REFLECTIONS"
+		light bounces off, duh.
+		smooth and jagged surfaces that are reflective causes different types of reflections.
+
+
+"HEIGHT MAPS"
+		similar to normal map. neither effect the silhouette. it will make the edges smooth. normal map makes it bumpy when reflecting things. 
+		
+"OCCULSTION"
+		more exacly, ambient occlusion. this is done in blender or 3d software. allows shadows to appear better. 
+                the more rays we send out. the less grainy the image will be
