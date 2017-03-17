@@ -1,0 +1,30 @@
+In animation:
+___________________________
+*make some shape to move*
+
+- click box on right under camera perspective
+- put in first keyframe (right mouse, and choose the type of keyframe)
+	default is "key frames"
+- mil falcon should change color.
+- when the location on the lower right hand side turns green, that means that it is "key framable"
+	*changing the location will change the color to yellow
+- right click and update keyframe after moving the object
+- now playing the frames should allow the animation to move
+	"cool" jingle: you move to the frame, you move the object, then you move keyframe
+- keep repeating this process until you get the general movement
+
+
+
+Rotation (still in animation editor)
+_________________
+"Curves editor" - F curve
+- curves are defined by the handles (slope of the curve)
+	rightmousing on a square allows you to move it. Using "g" on the keyboard allows points to be "grabbed" and 
+	move the object in a certain point and time. Moving the object in x changes the time that - that motion occurs.
+- length of line on handle defines its influence on the movement (allows movements to be slow or abrupt). By default
+  the movements/curve is co-linear
+
+
+Keyframe rotation adds another set of x y and z called Euler rotation. 
+- you can still just rotate using "r" and specifing how you want to turn it (x y or z)
+-
