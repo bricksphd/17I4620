@@ -1,0 +1,71 @@
+Procedural Generation
+____________________
+
+Where does a CS fit into?
+Well, we have assets: mesh, shader, rig - series of animations
+All of this goes to the programmer. From Programmer this goes to the GPU.
+
+
+
+We also mentioned that these tools are made for the programmer by the programmer: Ex - Blender, Maya, PhotoShop, ETC.
+
+
+
+So how does Procedural Generation fit into this?
+Assets (mesh, shader, rig, animation) 
+	Why do we need PG?
+		It would take game designers/artists too long to make a large area of terrain.
+		
+	How do we create it?
+		Equations
+
+	How to create a skyline procedurally?
+			blank scene
+			create camera
+			lights (directional)
+			Create empty object // will be used to create skyline
+			Create a cube
+			Create a c# file
+				"public GameObject buildingBase;
+
+				System.Random r = new System.Random();
+				
+				void Start()
+				{
+					int downtownX = 25;
+					int downtownY = 25;
+					
+					float distnaceToDowntown = Math.Sqrt(Math.Pow(i - downtownX, 2) + Math.Pow(j - downtownY, 2) +  
+
+					// Change these values (the ints) to make the city bigger
+					for(int i =0; i <  15; i++)
+					{
+						for(int j =0; j <  15; j++)
+						{
+							GameObject newObject = (GameObject)Instantiate(buildingBase, new Vector3(i * 2.5f, 0, j * 2.5f), Quaternion.identity); // makes a grid of them
+							float height = (float) (r.NextDouble() * 10) * (Mathf.Sqrt(2)*25 -distancetodowntown); // randomizes heights of the grid
+							
+	`						newObject.transform.localScale = new Vector3(1,2,1); // the two causes it to be two tall
+							newObject.transform.position = new Vector3(newObject.transform.position.x, height/2, newObject.transform.position.z); // makes them above ground
+
+						}
+					}
+				}"
+			
+
+
+
+
+	What is the color of noise?
+		By this we mean randomness. This is like the static on and old CRT TV with an antennae. 
+		This is because there are still photons in this spectrum that the tv is showing, these are true random values.
+		Playing white noise drowns out external environment sounds. 
+
+
+	How do we calc distance:
+		distance is x plus y both squared all sqrt'd.
+		the same thing replacing all the powers by 3 is the euclideam
+		abs(x) + abs(y), this distance in real life is travel time in omaha or called the manhattan distance. 
+
+
+	Say we have a bunch of buildings and we want to go from point 1 to 2. But we cannot go direct, we have to go around the building/obstacles.
