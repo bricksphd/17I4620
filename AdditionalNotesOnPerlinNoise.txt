@@ -1,0 +1,43 @@
+___________________
+PERLIN NOISE (clouds)
+___________________
+
+We dont want to manually design and shade huuuge world(s). We cannot do it all.
+Instead, we want to use a random algorithem. But we want to algorithem to use
+a memory feature, in that it will remember where we were before, aka,
+the information is not wiped when we walk away from an area.
+
+
+Lets take a look a white noise (on github).
+	It looks like what used to be on old fashioned crt tvs.
+
+
+Based on this, we want an algorithem that is 
+	1) Repeatable
+	2) Natural
+	
+White noise has vales that are close together that are not related at all. If 
+you sample two things next to each other, you will find no correalation.
+"Values for apart are unrelated".
+
+We want to have things that are close together not a lot differnet in elevation
+, but when we look at to distances far apart, the elevation diff. should be much 
+higher.
+
+
+___________________
+BROWN NOISE
+___________________
+Based on brownian motion. Often referred to as "terrrain".
+	Vales close together ARE related.
+	Values far apart are UNrelated.
+	
+	
+	
+White noise in 2d, we are randomizing between black and white  in a grid.
+In perlin noise, we are going to put a random number in every do often. Then we
+go through and used partial diff eq to solve what color things should be around
+the random value. 
+
+
+Unity has a preset of perlin noise! right out of the box too!
